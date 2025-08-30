@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <button id="save">Save</button>
+    <button id="load">Load</button>
     <div class="header">
       <h1>dXcm</h1>
       <div class="counters">
@@ -619,22 +621,1413 @@
       </div>
 
       <div id="Chem" class="tabcontent">
-        <h3>Chem</h3>
-        <p>
-          Chemistry is the scientific study of the composition, properties, and
-          reactions of matter. It is a physical science that studies the
-          composition, properties, and reactions of matter.
-        </p>
+        <div style="float: left; width: 20%">
+          <h3>Topics</h3>
+          <button
+            id="pc"
+            class="topic"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Physical
+          </button>
+          <button
+            class="topic"
+            id="oc"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Organic
+          </button>
+          <button
+            class="topic"
+            id="ioc"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Inorganic
+          </button>
+        </div>
+        <div
+          id="cardDeck"
+          style="float: right; width: 75%; overflow-y: scroll; max-height: 80vh"
+        >
+          <h3>Chapters</h3>
+          <div id="mole-concept-content" style="display: none">
+            <div class="card">
+              <h3>Mole Concept</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="mole-concept-R-Th" />
+                <label for="mole-concept-R-Th">R-Th</label>
+                <input type="checkbox" id="mole-concept-R-1" />
+                <label for="mole-concept-R-1">R-1</label>
+                <input type="checkbox" id="mole-concept-R-2" />
+                <label for="mole-concept-R-2">R-2</label>
+                <input type="checkbox" id="mole-concept-R-3" />
+                <label for="mole-concept-R-3">R-3</label>
+                <input type="checkbox" id="mole-concept-jM-5" />
+                <label for="mole-concept-jM-5">jM(5)</label>
+                <input type="checkbox" id="mole-concept-jA-all" />
+                <label for="mole-concept-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Atomic Structure</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="atomic-structure-R-Th" />
+                <label for="atomic-structure-R-Th">R-Th</label>
+                <input type="checkbox" id="atomic-structure-R-1" />
+                <label for="atomic-structure-R-1">R-1</label>
+                <input type="checkbox" id="atomic-structure-R-2" />
+                <label for="atomic-structure-R-2">R-2</label>
+                <input type="checkbox" id="atomic-structure-R-3" />
+                <label for="atomic-structure-R-3">R-3</label>
+                <input type="checkbox" id="atomic-structure-jM-5" />
+                <label for="atomic-structure-jM-5">jM(5)</label>
+                <input type="checkbox" id="atomic-structure-jA-all" />
+                <label for="atomic-structure-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>States of Matter</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="states-of-matter-R-Th" />
+                <label for="states-of-matter-R-Th">R-Th</label>
+                <input type="checkbox" id="states-of-matter-R-1" />
+                <label for="states-of-matter-R-1">R-1</label>
+                <input type="checkbox" id="states-of-matter-R-2" />
+                <label for="states-of-matter-R-2">R-2</label>
+                <input type="checkbox" id="states-of-matter-R-3" />
+                <label for="states-of-matter-R-3">R-3</label>
+                <input type="checkbox" id="states-of-matter-jM-5" />
+                <label for="states-of-matter-jM-5">jM(5)</label>
+                <input type="checkbox" id="states-of-matter-jA-all" />
+                <label for="states-of-matter-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Thermodynamics</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="thermodynamics-R-Th" />
+                <label for="thermodynamics-R-Th">R-Th</label>
+                <input type="checkbox" id="thermodynamics-R-1" />
+                <label for="thermodynamics-R-1">R-1</label>
+                <input type="checkbox" id="thermodynamics-R-2" />
+                <label for="thermodynamics-R-2">R-2</label>
+                <input type="checkbox" id="thermodynamics-R-3" />
+                <label for="thermodynamics-R-3">R-3</label>
+                <input type="checkbox" id="thermodynamics-jM-5" />
+                <label for="thermodynamics-jM-5">jM(5)</label>
+                <input type="checkbox" id="thermodynamics-jA-all" />
+                <label for="thermodynamics-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>ThermoChemistry</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="thermochemistry-R-Th" />
+                <label for="thermochemistry-R-Th">R-Th</label>
+                <input type="checkbox" id="thermochemistry-R-1" />
+                <label for="thermochemistry-R-1">R-1</label>
+                <input type="checkbox" id="thermochemistry-R-2" />
+                <label for="thermochemistry-R-2">R-2</label>
+                <input type="checkbox" id="thermochemistry-R-3" />
+                <label for="thermochemistry-R-3">R-3</label>
+                <input type="checkbox" id="thermochemistry-jM-5" />
+                <label for="thermochemistry-jM-5">jM(5)</label>
+                <input type="checkbox" id="thermochemistry-jA-all" />
+                <label for="thermochemistry-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Chem Equilibrium</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="chem-equilibrium-R-Th" />
+                <label for="chem-equilibrium-R-Th">R-Th</label>
+                <input type="checkbox" id="chem-equilibrium-R-1" />
+                <label for="chem-equilibrium-R-1">R-1</label>
+                <input type="checkbox" id="chem-equilibrium-R-2" />
+                <label for="chem-equilibrium-R-2">R-2</label>
+                <input type="checkbox" id="chem-equilibrium-R-3" />
+                <label for="chem-equilibrium-R-3">R-3</label>
+                <input type="checkbox" id="chem-equilibrium-jM-5" />
+                <label for="chem-equilibrium-jM-5">jM(5)</label>
+                <input type="checkbox" id="chem-equilibrium-jA-all" />
+                <label for="chem-equilibrium-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Ionic Equilibrium</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="ionic-equilibrium-R-Th" />
+                <label for="ionic-equilibrium-R-Th">R-Th</label>
+                <input type="checkbox" id="ionic-equilibrium-R-1" />
+                <label for="ionic-equilibrium-R-1">R-1</label>
+                <input type="checkbox" id="ionic-equilibrium-R-2" />
+                <label for="ionic-equilibrium-R-2">R-2</label>
+                <input type="checkbox" id="ionic-equilibrium-R-3" />
+                <label for="ionic-equilibrium-R-3">R-3</label>
+                <input type="checkbox" id="ionic-equilibrium-jM-5" />
+                <label for="ionic-equilibrium-jM-5">jM(5)</label>
+                <input type="checkbox" id="ionic-equilibrium-jA-all" />
+                <label for="ionic-equilibrium-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Solid State</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="solid-state-R-Th" />
+                <label for="solid-state-R-Th">R-Th</label>
+                <input type="checkbox" id="solid-state-R-1" />
+                <label for="solid-state-R-1">R-1</label>
+                <input type="checkbox" id="solid-state-R-2" />
+                <label for="solid-state-R-2">R-2</label>
+                <input type="checkbox" id="solid-state-R-3" />
+                <label for="solid-state-R-3">R-3</label>
+                <input type="checkbox" id="solid-state-jM-5" />
+                <label for="solid-state-jM-5">jM(5)</label>
+                <input type="checkbox" id="solid-state-jA-all" />
+                <label for="solid-state-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Solutions</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="solutions-R-Th" />
+                <label for="solutions-R-Th">R-Th</label>
+                <input type="checkbox" id="solutions-R-1" />
+                <label for="solutions-R-1">R-1</label>
+                <input type="checkbox" id="solutions-R-2" />
+                <label for="solutions-R-2">R-2</label>
+                <input type="checkbox" id="solutions-R-3" />
+                <label for="solutions-R-3">R-3</label>
+                <input type="checkbox" id="solutions-jM-5" />
+                <label for="solutions-jM-5">jM(5)</label>
+                <input type="checkbox" id="solutions-jA-all" />
+                <label for="solutions-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Electrochemistry</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="electrochemistry-R-Th" />
+                <label for="electrochemistry-R-Th">R-Th</label>
+                <input type="checkbox" id="electrochemistry-R-1" />
+                <label for="electrochemistry-R-1">R-1</label>
+                <input type="checkbox" id="electrochemistry-R-2" />
+                <label for="electrochemistry-R-2">R-2</label>
+                <input type="checkbox" id="electrochemistry-R-3" />
+                <label for="electrochemistry-R-3">R-3</label>
+                <input type="checkbox" id="electrochemistry-jM-5" />
+                <label for="electrochemistry-jM-5">jM(5)</label>
+                <input type="checkbox" id="electrochemistry-jA-all" />
+                <label for="electrochemistry-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Chem Kinetics</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="chem-kinetics-R-Th" />
+                <label for="chem-kinetics-R-Th">R-Th</label>
+                <input type="checkbox" id="chem-kinetics-R-1" />
+                <label for="chem-kinetics-R-1">R-1</label>
+                <input type="checkbox" id="chem-kinetics-R-2" />
+                <label for="chem-kinetics-R-2">R-2</label>
+                <input type="checkbox" id="chem-kinetics-R-3" />
+                <label for="chem-kinetics-R-3">R-3</label>
+                <input type="checkbox" id="chem-kinetics-jM-5" />
+                <label for="chem-kinetics-jM-5">jM(5)</label>
+                <input type="checkbox" id="chem-kinetics-jA-all" />
+                <label for="chem-kinetics-jA-all">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Surface Chem</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="surface-chem-R-Th" />
+                <label for="surface-chem-R-Th">R-Th</label>
+                <input type="checkbox" id="surface-chem-R-1" />
+                <label for="surface-chem-R-1">R-1</label>
+                <input type="checkbox" id="surface-chem-R-2" />
+                <label for="surface-chem-R-2">R-2</label>
+                <input type="checkbox" id="surface-chem-R-3" />
+                <label for="surface-chem-R-3">R-3</label>
+                <input type="checkbox" id="surface-chem-jM-5" />
+                <label for="surface-chem-jM-5">jM(5)</label>
+                <input type="checkbox" id="surface-chem-jA-all" />
+                <label for="surface-chem-jA-all">jA(all)</label>
+              </div>
+            </div>
+          </div>
+          <div id="OrganicChemistry" class="tabcontent">
+            <div class="cards-container">
+              <div class="card">
+                <h3>GOC</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-introduction-R-Th"
+                  />
+                  <label for="organic-chemistry-introduction-R-Th">R-Th</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-introduction-R-1"
+                  />
+                  <label for="organic-chemistry-introduction-R-1">R-1</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-introduction-R-2"
+                  />
+                  <label for="organic-chemistry-introduction-R-2">R-2</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-introduction-R-3"
+                  />
+                  <label for="organic-chemistry-introduction-R-3">R-3</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-introduction-jM-5"
+                  />
+                  <label for="organic-chemistry-introduction-jM-5">jM(5)</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-introduction-jA-all"
+                  />
+                  <label for="organic-chemistry-introduction-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Isomerism</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-Th"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-1"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-2"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-3"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-jM-5"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-jA-all"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>HydroCarbons</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-constitutional-isomerism-R-Th"
+                  />
+                  <label for="organic-chemistry-constitutional-isomerism-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-constitutional-isomerism-R-1"
+                  />
+                  <label for="organic-chemistry-constitutional-isomerism-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-constitutional-isomerism-R-2"
+                  />
+                  <label for="organic-chemistry-constitutional-isomerism-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-constitutional-isomerism-R-3"
+                  />
+                  <label for="organic-chemistry-constitutional-isomerism-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-constitutional-isomerism-jM-5"
+                  />
+                  <label for="organic-chemistry-constitutional-isomerism-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-constitutional-isomerism-jA-all"
+                  />
+                  <label for="organic-chemistry-constitutional-isomerism-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Alkyl Halides</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-stereochemistry-R-Th"
+                  />
+                  <label for="organic-chemistry-stereochemistry-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-stereochemistry-R-1"
+                  />
+                  <label for="organic-chemistry-stereochemistry-R-1">R-1</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-stereochemistry-R-2"
+                  />
+                  <label for="organic-chemistry-stereochemistry-R-2">R-2</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-stereochemistry-R-3"
+                  />
+                  <label for="organic-chemistry-stereochemistry-R-3">R-3</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-stereochemistry-jM-5"
+                  />
+                  <label for="organic-chemistry-stereochemistry-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-stereochemistry-jA-all"
+                  />
+                  <label for="organic-chemistry-stereochemistry-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Alcohols, Phenols and Ethers</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polarity-and-acid-base-R-Th"
+                  />
+                  <label for="organic-chemistry-polarity-and-acid-base-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polarity-and-acid-base-R-1"
+                  />
+                  <label for="organic-chemistry-polarity-and-acid-base-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polarity-and-acid-base-R-2"
+                  />
+                  <label for="organic-chemistry-polarity-and-acid-base-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polarity-and-acid-base-R-3"
+                  />
+                  <label for="organic-chemistry-polarity-and-acid-base-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polarity-and-acid-base-jM-5"
+                  />
+                  <label for="organic-chemistry-polarity-and-acid-base-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polarity-and-acid-base-jA-all"
+                  />
+                  <label for="organic-chemistry-polarity-and-acid-base-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Carbonyl Compounds</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="organic-chemistry-alkanes-R-Th" />
+                  <label for="organic-chemistry-alkanes-R-Th">R-Th</label>
+                  <input type="checkbox" id="organic-chemistry-alkanes-R-1" />
+                  <label for="organic-chemistry-alkanes-R-1">R-1</label>
+                  <input type="checkbox" id="organic-chemistry-alkanes-R-2" />
+                  <label for="organic-chemistry-alkanes-R-2">R-2</label>
+                  <input type="checkbox" id="organic-chemistry-alkanes-R-3" />
+                  <label for="organic-chemistry-alkanes-R-3">R-3</label>
+                  <input type="checkbox" id="organic-chemistry-alkanes-jM-5" />
+                  <label for="organic-chemistry-alkanes-jM-5">jM(5)</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-alkanes-jA-all"
+                  />
+                  <label for="organic-chemistry-alkanes-jA-all">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Amines</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="organic-chemistry-alkenes-R-Th" />
+                  <label for="organic-chemistry-alkenes-R-Th">R-Th</label>
+                  <input type="checkbox" id="organic-chemistry-alkenes-R-1" />
+                  <label for="organic-chemistry-alkenes-R-1">R-1</label>
+                  <input type="checkbox" id="organic-chemistry-alkenes-R-2" />
+                  <label for="organic-chemistry-alkenes-R-2">R-2</label>
+                  <input type="checkbox" id="organic-chemistry-alkenes-R-3" />
+                  <label for="organic-chemistry-alkenes-R-3">R-3</label>
+                  <input type="checkbox" id="organic-chemistry-alkenes-jM-5" />
+                  <label for="organic-chemistry-alkenes-jM-5">jM(5)</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-alkenes-jA-all"
+                  />
+                  <label for="organic-chemistry-alkenes-jA-all">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>IUPAC Nomenclature</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-Th"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-1"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-2"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-R-3"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-jM-5"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-iupac-nomenclature-jA-all"
+                  />
+                  <label for="organic-chemistry-iupac-nomenclature-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Biomolecules</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-biomolecules-R-Th"
+                  />
+                  <label for="organic-chemistry-biomolecules-R-Th">R-Th</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-biomolecules-R-1"
+                  />
+                  <label for="organic-chemistry-biomolecules-R-1">R-1</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-biomolecules-R-2"
+                  />
+                  <label for="organic-chemistry-biomolecules-R-2">R-2</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-biomolecules-R-3"
+                  />
+                  <label for="organic-chemistry-biomolecules-R-3">R-3</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-biomolecules-jM-5"
+                  />
+                  <label for="organic-chemistry-biomolecules-jM-5">jM(5)</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-biomolecules-jA-all"
+                  />
+                  <label for="organic-chemistry-biomolecules-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Practical Organic Chem</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-practical-organic-chem-R-Th"
+                  />
+                  <label for="organic-chemistry-practical-organic-chem-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-practical-organic-chem-R-1"
+                  />
+                  <label for="organic-chemistry-practical-organic-chem-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-practical-organic-chem-R-2"
+                  />
+                  <label for="organic-chemistry-practical-organic-chem-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-practical-organic-chem-R-3"
+                  />
+                  <label for="organic-chemistry-practical-organic-chem-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-practical-organic-chem-jM-5"
+                  />
+                  <label for="organic-chemistry-practical-organic-chem-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-practical-organic-chem-jA-all"
+                  />
+                  <label for="organic-chemistry-practical-organic-chem-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Polymers</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="organic-chemistry-polymers-R-Th" />
+                  <label for="organic-chemistry-polymers-R-Th">R-Th</label>
+                  <input type="checkbox" id="organic-chemistry-polymers-R-1" />
+                  <label for="organic-chemistry-polymers-R-1">R-1</label>
+                  <input type="checkbox" id="organic-chemistry-polymers-R-2" />
+                  <label for="organic-chemistry-polymers-R-2">R-2</label>
+                  <input type="checkbox" id="organic-chemistry-polymers-R-3" />
+                  <label for="organic-chemistry-polymers-R-3">R-3</label>
+                  <input type="checkbox" id="organic-chemistry-polymers-jM-5" />
+                  <label for="organic-chemistry-polymers-jM-5">jM(5)</label>
+                  <input
+                    type="checkbox"
+                    id="organic-chemistry-polymers-jA-all"
+                  />
+                  <label for="organic-chemistry-polymers-jA-all">jA(all)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="inorganic-chemistry" class="tabcontent">
+            <div id="inorganic-chemistry-content">
+              <div class="card">
+                <h3>Periodic Properties</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-periodic-properties-R-Th"
+                  />
+                  <label for="inorganic-chemistry-periodic-properties-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-periodic-properties-R-1"
+                  />
+                  <label for="inorganic-chemistry-periodic-properties-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-periodic-properties-R-2"
+                  />
+                  <label for="inorganic-chemistry-periodic-properties-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-periodic-properties-R-3"
+                  />
+                  <label for="inorganic-chemistry-periodic-properties-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-periodic-properties-jM-5"
+                  />
+                  <label for="inorganic-chemistry-periodic-properties-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-periodic-properties-jA-all"
+                  />
+                  <label for="inorganic-chemistry-periodic-properties-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Chemical Bonding</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-chemical-bonding-R-Th"
+                  />
+                  <label for="inorganic-chemistry-chemical-bonding-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-chemical-bonding-R-1"
+                  />
+                  <label for="inorganic-chemistry-chemical-bonding-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-chemical-bonding-R-2"
+                  />
+                  <label for="inorganic-chemistry-chemical-bonding-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-chemical-bonding-R-3"
+                  />
+                  <label for="inorganic-chemistry-chemical-bonding-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-chemical-bonding-jM-5"
+                  />
+                  <label for="inorganic-chemistry-chemical-bonding-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-chemical-bonding-jA-all"
+                  />
+                  <label for="inorganic-chemistry-chemical-bonding-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>S,p,d,f Blocks</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-s-p-d-f-blocks-R-Th"
+                  />
+                  <label for="inorganic-chemistry-s-p-d-f-blocks-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-s-p-d-f-blocks-R-1"
+                  />
+                  <label for="inorganic-chemistry-s-p-d-f-blocks-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-s-p-d-f-blocks-R-2"
+                  />
+                  <label for="inorganic-chemistry-s-p-d-f-blocks-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-s-p-d-f-blocks-R-3"
+                  />
+                  <label for="inorganic-chemistry-s-p-d-f-blocks-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-s-p-d-f-blocks-jM-5"
+                  />
+                  <label for="inorganic-chemistry-s-p-d-f-blocks-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-s-p-d-f-blocks-jA-all"
+                  />
+                  <label for="inorganic-chemistry-s-p-d-f-blocks-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Coordination Compounds</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-coordination-compounds-R-Th"
+                  />
+                  <label for="inorganic-chemistry-coordination-compounds-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-coordination-compounds-R-1"
+                  />
+                  <label for="inorganic-chemistry-coordination-compounds-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-coordination-compounds-R-2"
+                  />
+                  <label for="inorganic-chemistry-coordination-compounds-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-coordination-compounds-R-3"
+                  />
+                  <label for="inorganic-chemistry-coordination-compounds-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-coordination-compounds-jM-5"
+                  />
+                  <label for="inorganic-chemistry-coordination-compounds-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-coordination-compounds-jA-all"
+                  />
+                  <label for="inorganic-chemistry-coordination-compounds-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Metallurgy</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-metallurgy-R-Th"
+                  />
+                  <label for="inorganic-chemistry-metallurgy-R-Th">R-Th</label>
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-metallurgy-R-1"
+                  />
+                  <label for="inorganic-chemistry-metallurgy-R-1">R-1</label>
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-metallurgy-R-2"
+                  />
+                  <label for="inorganic-chemistry-metallurgy-R-2">R-2</label>
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-metallurgy-R-3"
+                  />
+                  <label for="inorganic-chemistry-metallurgy-R-3">R-3</label>
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-metallurgy-jM-5"
+                  />
+                  <label for="inorganic-chemistry-metallurgy-jM-5">jM(5)</label>
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-metallurgy-jA-all"
+                  />
+                  <label for="inorganic-chemistry-metallurgy-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <h3>Environmental Chemistry</h3>
+                <div class="checkboxes" style="float: right">
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-environmental-chemistry-R-Th"
+                  />
+                  <label for="inorganic-chemistry-environmental-chemistry-R-Th"
+                    >R-Th</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-environmental-chemistry-R-1"
+                  />
+                  <label for="inorganic-chemistry-environmental-chemistry-R-1"
+                    >R-1</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-environmental-chemistry-R-2"
+                  />
+                  <label for="inorganic-chemistry-environmental-chemistry-R-2"
+                    >R-2</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-environmental-chemistry-R-3"
+                  />
+                  <label for="inorganic-chemistry-environmental-chemistry-R-3"
+                    >R-3</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-environmental-chemistry-jM-5"
+                  />
+                  <label for="inorganic-chemistry-environmental-chemistry-jM-5"
+                    >jM(5)</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="inorganic-chemistry-environmental-chemistry-jA-all"
+                  />
+                  <label
+                    for="inorganic-chemistry-environmental-chemistry-jA-all"
+                    >jA(all)</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            document.getElementById("pc").addEventListener("click", () => {
+              toggleDiv("mole-concept-content");
+            });
+            document.getElementById("oc").addEventListener("click", () => {
+              toggleDiv("OrganicChemistry");
+            });
+            document.getElementById("ioc").addEventListener("click", () => {
+              toggleDiv("inorganic-chemistry");
+            });
+
+            function toggleDiv(divId) {
+              if (divId !== "Chem" && divId !== "Physics") {
+                if (document.getElementById(divId).style.display === "none") {
+                  var activeDiv = document.querySelector(".actived");
+                  if (activeDiv) {
+                    activeDiv.classList.remove("actived");
+                    activeDiv.style.display = "none";
+                  }
+                  document.getElementById(divId).classList.add("actived");
+                  document.getElementById(divId).style.display = "grid";
+                } else {
+                  document.getElementById(divId).style.display = "none";
+                }
+              }
+            }
+          </script>
+        </div>
       </div>
 
       <div id="Math" class="tabcontent">
-        <h3>Math</h3>
-        <p>
-          Mathematics is the scientific study of numbers, quantities, and
-          shapes. It is a language with its own notations, vocabulary, and
-          grammar, and is used to describe and analyze the world around us.
-        </p>
+        <div style="float: left; width: 20%">
+          <h3>Topics</h3>
+          <button
+            id="algebra"
+            class="topic"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Algebra
+          </button>
+          <button
+            class="topic"
+            id="calculus"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Calculus
+          </button>
+          <button
+            class="topic"
+            id="coordinate-geometry"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Coordinate Geometry
+          </button>
+          <button
+            class="topic"
+            id="vectors-and-3d"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Vectors and 3D (COMING SOON)
+          </button>
+          <button
+            class="topic"
+            id="trigonometry"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Trigonometry (COMING SOON)
+          </button>
+        </div>
+        <div
+          id="algebra-content"
+          style="
+            display: none;
+            width: 75%;
+            overflow-y: scroll;
+            max-height: 80vh;
+          "
+        >
+          <div class="card">
+            <h3>Basic Math</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-basic-math-R-Th" />
+              <label for="algebra-basic-math-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-basic-math-R-1" />
+              <label for="algebra-basic-math-R-1">R-1</label>
+              <input type="checkbox" id="algebra-basic-math-R-2" />
+              <label for="algebra-basic-math-R-2">R-2</label>
+              <input type="checkbox" id="algebra-basic-math-R-3" />
+              <label for="algebra-basic-math-R-3">R-3</label>
+              <input type="checkbox" id="algebra-basic-math-jM-5" />
+              <label for="algebra-basic-math-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-basic-math-jA-all" />
+              <label for="algebra-basic-math-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Theory of Equations</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-theory-of-equations-R-Th" />
+              <label for="algebra-theory-of-equations-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-theory-of-equations-R-1" />
+              <label for="algebra-theory-of-equations-R-1">R-1</label>
+              <input type="checkbox" id="algebra-theory-of-equations-R-2" />
+              <label for="algebra-theory-of-equations-R-2">R-2</label>
+              <input type="checkbox" id="algebra-theory-of-equations-R-3" />
+              <label for="algebra-theory-of-equations-R-3">R-3</label>
+              <input type="checkbox" id="algebra-theory-of-equations-jM-5" />
+              <label for="algebra-theory-of-equations-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-theory-of-equations-jA-all" />
+              <label for="algebra-theory-of-equations-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Sequence Series</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-sequence-series-R-Th" />
+              <label for="algebra-sequence-series-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-sequence-series-R-1" />
+              <label for="algebra-sequence-series-R-1">R-1</label>
+              <input type="checkbox" id="algebra-sequence-series-R-2" />
+              <label for="algebra-sequence-series-R-2">R-2</label>
+              <input type="checkbox" id="algebra-sequence-series-R-3" />
+              <label for="algebra-sequence-series-R-3">R-3</label>
+              <input type="checkbox" id="algebra-sequence-series-jM-5" />
+              <label for="algebra-sequence-series-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-sequence-series-jA-all" />
+              <label for="algebra-sequence-series-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>PnC</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-pnc-R-Th" />
+              <label for="algebra-pnc-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-pnc-R-1" />
+              <label for="algebra-pnc-R-1">R-1</label>
+              <input type="checkbox" id="algebra-pnc-R-2" />
+              <label for="algebra-pnc-R-2">R-2</label>
+              <input type="checkbox" id="algebra-pnc-R-3" />
+              <label for="algebra-pnc-R-3">R-3</label>
+              <input type="checkbox" id="algebra-pnc-jM-5" />
+              <label for="algebra-pnc-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-pnc-jA-all" />
+              <label for="algebra-pnc-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Binomial</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-binomial-R-Th" />
+              <label for="algebra-binomial-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-binomial-R-1" />
+              <label for="algebra-binomial-R-1">R-1</label>
+              <input type="checkbox" id="algebra-binomial-R-2" />
+              <label for="algebra-binomial-R-2">R-2</label>
+              <input type="checkbox" id="algebra-binomial-R-3" />
+              <label for="algebra-binomial-R-3">R-3</label>
+              <input type="checkbox" id="algebra-binomial-jM-5" />
+              <label for="algebra-binomial-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-binomial-jA-all" />
+              <label for="algebra-binomial-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Probability</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-probability-R-Th" />
+              <label for="algebra-probability-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-probability-R-1" />
+              <label for="algebra-probability-R-1">R-1</label>
+              <input type="checkbox" id="algebra-probability-R-2" />
+              <label for="algebra-probability-R-2">R-2</label>
+              <input type="checkbox" id="algebra-probability-R-3" />
+              <label for="algebra-probability-R-3">R-3</label>
+              <input type="checkbox" id="algebra-probability-jM-5" />
+              <label for="algebra-probability-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-probability-jA-all" />
+              <label for="algebra-probability-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Statistics</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="algebra-statistics-R-Th" />
+              <label for="algebra-statistics-R-Th">R-Th</label>
+              <input type="checkbox" id="algebra-statistics-R-1" />
+              <label for="algebra-statistics-R-1">R-1</label>
+              <input type="checkbox" id="algebra-statistics-R-2" />
+              <label for="algebra-statistics-R-2">R-2</label>
+              <input type="checkbox" id="algebra-statistics-R-3" />
+              <label for="algebra-statistics-R-3">R-3</label>
+              <input type="checkbox" id="algebra-statistics-jM-5" />
+              <label for="algebra-statistics-jM-5">jM(5)</label>
+              <input type="checkbox" id="algebra-statistics-jA-all" />
+              <label for="algebra-statistics-jA-all">jA(all)</label>
+            </div>
+          </div>
+        </div>
+        <div
+          id="calculus-content"
+          style="
+            display: none;
+            width: 75%;
+            overflow-y: scroll;
+            max-height: 80vh;
+          "
+        >
+          <div class="card">
+            <h3>Relations Functions</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-relations-functions-R-Th" />
+              <label for="calculus-relations-functions-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-relations-functions-R-1" />
+              <label for="calculus-relations-functions-R-1">R-1</label>
+              <input type="checkbox" id="calculus-relations-functions-R-2" />
+              <label for="calculus-relations-functions-R-2">R-2</label>
+              <input type="checkbox" id="calculus-relations-functions-R-3" />
+              <label for="calculus-relations-functions-R-3">R-3</label>
+              <input type="checkbox" id="calculus-relations-functions-jM-5" />
+              <label for="calculus-relations-functions-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-relations-functions-jA-all" />
+              <label for="calculus-relations-functions-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>ITF</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-itf-R-Th" />
+              <label for="calculus-itf-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-itf-R-1" />
+              <label for="calculus-itf-R-1">R-1</label>
+              <input type="checkbox" id="calculus-itf-R-2" />
+              <label for="calculus-itf-R-2">R-2</label>
+              <input type="checkbox" id="calculus-itf-R-3" />
+              <label for="calculus-itf-R-3">R-3</label>
+              <input type="checkbox" id="calculus-itf-jM-5" />
+              <label for="calculus-itf-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-itf-jA-all" />
+              <label for="calculus-itf-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>LCD</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-lcd-R-Th" />
+              <label for="calculus-lcd-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-lcd-R-1" />
+              <label for="calculus-lcd-R-1">R-1</label>
+              <input type="checkbox" id="calculus-lcd-R-2" />
+              <label for="calculus-lcd-R-2">R-2</label>
+              <input type="checkbox" id="calculus-lcd-R-3" />
+              <label for="calculus-lcd-R-3">R-3</label>
+              <input type="checkbox" id="calculus-lcd-jM-5" />
+              <label for="calculus-lcd-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-lcd-jA-all" />
+              <label for="calculus-lcd-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>AOD</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-aod-R-Th" />
+              <label for="calculus-aod-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-aod-R-1" />
+              <label for="calculus-aod-R-1">R-1</label>
+              <input type="checkbox" id="calculus-aod-R-2" />
+              <label for="calculus-aod-R-2">R-2</label>
+              <input type="checkbox" id="calculus-aod-R-3" />
+              <label for="calculus-aod-R-3">R-3</label>
+              <input type="checkbox" id="calculus-aod-jM-5" />
+              <label for="calculus-aod-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-aod-jA-all" />
+              <label for="calculus-aod-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>MOD</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-mod-R-Th" />
+              <label for="calculus-mod-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-mod-R-1" />
+              <label for="calculus-mod-R-1">R-1</label>
+              <input type="checkbox" id="calculus-mod-R-2" />
+              <label for="calculus-mod-R-2">R-2</label>
+              <input type="checkbox" id="calculus-mod-R-3" />
+              <label for="calculus-mod-R-3">R-3</label>
+              <input type="checkbox" id="calculus-mod-jM-5" />
+              <label for="calculus-mod-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-mod-jA-all" />
+              <label for="calculus-mod-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Indefinite</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-indefinite-R-Th" />
+              <label for="calculus-indefinite-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-indefinite-R-1" />
+              <label for="calculus-indefinite-R-1">R-1</label>
+              <input type="checkbox" id="calculus-indefinite-R-2" />
+              <label for="calculus-indefinite-R-2">R-2</label>
+              <input type="checkbox" id="calculus-indefinite-R-3" />
+              <label for="calculus-indefinite-R-3">R-3</label>
+              <input type="checkbox" id="calculus-indefinite-jM-5" />
+              <label for="calculus-indefinite-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-indefinite-jA-all" />
+              <label for="calculus-indefinite-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Definite</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-definite-R-Th" />
+              <label for="calculus-definite-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-definite-R-1" />
+              <label for="calculus-definite-R-1">R-1</label>
+              <input type="checkbox" id="calculus-definite-R-2" />
+              <label for="calculus-definite-R-2">R-2</label>
+              <input type="checkbox" id="calculus-definite-R-3" />
+              <label for="calculus-definite-R-3">R-3</label>
+              <input type="checkbox" id="calculus-definite-jM-5" />
+              <label for="calculus-definite-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-definite-jA-all" />
+              <label for="calculus-definite-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Area</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="calculus-area-R-Th" />
+              <label for="calculus-area-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-area-R-1" />
+              <label for="calculus-area-R-1">R-1</label>
+              <input type="checkbox" id="calculus-area-R-2" />
+              <label for="calculus-area-R-2">R-2</label>
+              <input type="checkbox" id="calculus-area-R-3" />
+              <label for="calculus-area-R-3">R-3</label>
+              <input type="checkbox" id="calculus-area-jM-5" />
+              <label for="calculus-area-jM-5">jM(5)</label>
+              <input type="checkbox" id="calculus-area-jA-all" />
+              <label for="calculus-area-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Differential Equations</h3>
+            <div class="checkboxes" style="float: right">
+              <input
+                type="checkbox"
+                id="calculus-differential-equations-R-Th"
+              />
+              <label for="calculus-differential-equations-R-Th">R-Th</label>
+              <input type="checkbox" id="calculus-differential-equations-R-1" />
+              <label for="calculus-differential-equations-R-1">R-1</label>
+              <input type="checkbox" id="calculus-differential-equations-R-2" />
+              <label for="calculus-differential-equations-R-2">R-2</label>
+              <input type="checkbox" id="calculus-differential-equations-R-3" />
+              <label for="calculus-differential-equations-R-3">R-3</label>
+              <input
+                type="checkbox"
+                id="calculus-differential-equations-jM-5"
+              />
+              <label for="calculus-differential-equations-jM-5">jM(5)</label>
+              <input
+                type="checkbox"
+                id="calculus-differential-equations-jA-all"
+              />
+              <label for="calculus-differential-equations-jA-all"
+                >jA(all)</label
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          id="geo2-content"
+          style="
+            display: none;
+            width: 75%;
+            overflow-y: scroll;
+            max-height: 80vh;
+          "
+        >
+          <div class="card">
+            <h3>Straight Lines</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="geo2-straight-lines-R-Th" />
+              <label for="geo2-straight-lines-R-Th">R-Th</label>
+              <input type="checkbox" id="geo2-straight-lines-R-1" />
+              <label for="geo2-straight-lines-R-1">R-1</label>
+              <input type="checkbox" id="geo2-straight-lines-R-2" />
+              <label for="geo2-straight-lines-R-2">R-2</label>
+              <input type="checkbox" id="geo2-straight-lines-R-3" />
+              <label for="geo2-straight-lines-R-3">R-3</label>
+              <input type="checkbox" id="geo2-straight-lines-jM-5" />
+              <label for="geo2-straight-lines-jM-5">jM(5)</label>
+              <input type="checkbox" id="geo2-straight-lines-jA-all" />
+              <label for="geo2-straight-lines-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Circles</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="geo2-circles-R-Th" />
+              <label for="geo2-circles-R-Th">R-Th</label>
+              <input type="checkbox" id="geo2-circles-R-1" />
+              <label for="geo2-circles-R-1">R-1</label>
+              <input type="checkbox" id="geo2-circles-R-2" />
+              <label for="geo2-circles-R-2">R-2</label>
+              <input type="checkbox" id="geo2-circles-R-3" />
+              <label for="geo2-circles-R-3">R-3</label>
+              <input type="checkbox" id="geo2-circles-jM-5" />
+              <label for="geo2-circles-jM-5">jM(5)</label>
+              <input type="checkbox" id="geo2-circles-jA-all" />
+              <label for="geo2-circles-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Parabola</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="geo2-parabola-R-Th" />
+              <label for="geo2-parabola-R-Th">R-Th</label>
+              <input type="checkbox" id="geo2-parabola-R-1" />
+              <label for="geo2-parabola-R-1">R-1</label>
+              <input type="checkbox" id="geo2-parabola-R-2" />
+              <label for="geo2-parabola-R-2">R-2</label>
+              <input type="checkbox" id="geo2-parabola-R-3" />
+              <label for="geo2-parabola-R-3">R-3</label>
+              <input type="checkbox" id="geo2-parabola-jM-5" />
+              <label for="geo2-parabola-jM-5">jM(5)</label>
+              <input type="checkbox" id="geo2-parabola-jA-all" />
+              <label for="geo2-parabola-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Ellipse</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="geo2-ellipse-R-Th" />
+              <label for="geo2-ellipse-R-Th">R-Th</label>
+              <input type="checkbox" id="geo2-ellipse-R-1" />
+              <label for="geo2-ellipse-R-1">R-1</label>
+              <input type="checkbox" id="geo2-ellipse-R-2" />
+              <label for="geo2-ellipse-R-2">R-2</label>
+              <input type="checkbox" id="geo2-ellipse-R-3" />
+              <label for="geo2-ellipse-R-3">R-3</label>
+              <input type="checkbox" id="geo2-ellipse-jM-5" />
+              <label for="geo2-ellipse-jM-5">jM(5)</label>
+              <input type="checkbox" id="geo2-ellipse-jA-all" />
+              <label for="geo2-ellipse-jA-all">jA(all)</label>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Hyperbola</h3>
+            <div class="checkboxes" style="float: right">
+              <input type="checkbox" id="geo2-hyperbola-R-Th" />
+              <label for="geo2-hyperbola-R-Th">R-Th</label>
+              <input type="checkbox" id="geo2-hyperbola-R-1" />
+              <label for="geo2-hyperbola-R-1">R-1</label>
+              <input type="checkbox" id="geo2-hyperbola-R-2" />
+              <label for="geo2-hyperbola-R-2">R-2</label>
+              <input type="checkbox" id="geo2-hyperbola-R-3" />
+              <label for="geo2-hyperbola-R-3">R-3</label>
+              <input type="checkbox" id="geo2-hyperbola-jM-5" />
+              <label for="geo2-hyperbola-jM-5">jM(5)</label>
+              <input type="checkbox" id="geo2-hyperbola-jA-all" />
+              <label for="geo2-hyperbola-jA-all">jA(all)</label>
+            </div>
+          </div>
+        </div>
       </div>
+      <script>
+        document.getElementById("algebra").addEventListener("click", () => {
+          toggleDiv("algebra-content");
+        });
+        document.getElementById("calculus").addEventListener("click", () => {
+          toggleDiv("calculus-content");
+        });
+        document
+          .getElementById("coordinate-geometry")
+          .addEventListener("click", () => {
+            toggleDiv("geo2-content");
+          });
+      </script>
 
       <script>
         function openTab(evt, tabName) {
@@ -655,5 +2048,52 @@
         }
       </script>
     </div>
+
+    <script>
+      document.getElementById("save").addEventListener("click", () => {
+        var data = document.querySelectorAll("input[type=checkbox]:checked");
+        var text = "";
+        data.forEach((el) => {
+          text += el.id + "\n";
+        });
+        var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+        var filename = "data.txt";
+        if (window.navigator.msSaveOrOpenBlob) {
+          // IE10+
+          window.navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+          // Others
+          var a = document.createElement("a"),
+            url = URL.createObjectURL(blob);
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(function () {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+          }, 0);
+        }
+      });
+
+      document.getElementById("load").addEventListener("click", () => {
+        var input = document.createElement("input");
+        input.type = "file";
+        input.accept = ".txt";
+        input.onchange = function (event) {
+          var file = event.target.files[0];
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            var text = e.target.result;
+            var lines = text.split("\n");
+            lines.forEach((line) => {
+              document.getElementById(line).click();
+            });
+          };
+          reader.readAsText(file);
+        };
+        input.click();
+      });
+    </script>
   </body>
 </html>
