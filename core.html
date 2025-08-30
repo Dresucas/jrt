@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revision Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>dXcm</h1>
+      <div class="counters">
+        <div class="counter1">
+          <span>15 Jan, 2026: </span
+          ><span class="counter-value" id="days-left"></span>
+          <script>
+            const today = new Date();
+            const target = new Date("2026-01-15");
+            const msDifference = target.getTime() - today.getTime();
+            const daysDifference = Math.floor(
+              msDifference / (1000 * 60 * 60 * 24)
+            );
+            document.getElementById(
+              "days-left"
+            ).innerHTML = `${daysDifference}`;
+          </script>
+        </div>
+        <div class="counter2">
+          <span>15 May, 2026: </span
+          ><span class="counter-value" id="days-left2"></span>
+          <script>
+            const today2 = new Date();
+            const target2 = new Date("2026-05-15");
+            const msDifference2 = target2.getTime() - today2.getTime();
+            const daysDifference2 = Math.floor(
+              msDifference2 / (1000 * 60 * 60 * 24)
+            );
+            document.getElementById(
+              "days-left2"
+            ).innerHTML = `${daysDifference2}`;
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabsContainer">
+      <div class="tabs">
+        <button class="tablinks" onclick="openTab(event, 'Physics')">
+          Physics
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Chem')">Chem</button>
+        <button class="tablinks" onclick="openTab(event, 'Math')">Math</button>
+      </div>
+
+      <div id="Physics" class="tabcontent">
+        <div style="float: left; width: 20%">
+          <h3>Topics</h3>
+          <button
+            id="kinematics"
+            class="topic"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Mechanics
+          </button>
+          <button
+            class="topic"
+            id="dynamics"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Thermal Physics
+          </button>
+          <button
+            class="topic"
+            id="energy"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            ElectroMagnetism
+          </button>
+          <button
+            class="topic"
+            id="rotational"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Modern Physics
+          </button>
+          <button
+            class="topic"
+            id="gravitation"
+            style="width: 100%; margin-bottom: 10px"
+          >
+            Optics
+          </button>
+        </div>
+        <div
+          id="cardDeck"
+          style="float: right; width: 75%; overflow-y: scroll; max-height: 80vh"
+        >
+          <h3>Chapters</h3>
+          <div id="kinematics-content" style="display: none">
+            <div class="card">
+              <h3>Kinematics</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="kinematics-1" />
+                <label for="kinematics-1">R-Th</label>
+                <input type="checkbox" id="kinematics-2" />
+                <label for="kinematics-2">R-1</label>
+                <input type="checkbox" id="kinematics-3" />
+                <label for="kinematics-3">R-2</label>
+                <input type="checkbox" id="kinematics-4" />
+                <label for="kinematics-4">R-3</label>
+                <input type="checkbox" id="kinematics-5" />
+                <label for="kinematics-5">jM(5)</label>
+                <input type="checkbox" id="kinematics-6" />
+                <label for="kinematics-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>NLM</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="nlm-1" />
+                <label for="nlm-1">R-Th</label>
+                <input type="checkbox" id="nlm-2" />
+                <label for="nlm-2">R-1</label>
+                <input type="checkbox" id="nlm-3" />
+                <label for="nlm-3">R-2</label>
+                <input type="checkbox" id="nlm-4" />
+                <label for="nlm-4">R-3</label>
+                <input type="checkbox" id="nlm-5" />
+                <label for="nlm-5">jM(5)</label>
+                <input type="checkbox" id="nlm-6" />
+                <label for="nlm-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Friction</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="friction-1" />
+                <label for="friction-1">R-Th</label>
+                <input type="checkbox" id="friction-2" />
+                <label for="friction-2">R-1</label>
+                <input type="checkbox" id="friction-3" />
+                <label for="friction-3">R-2</label>
+                <input type="checkbox" id="friction-4" />
+                <label for="friction-4">R-3</label>
+                <input type="checkbox" id="friction-5" />
+                <label for="friction-5">jM(5)</label>
+                <input type="checkbox" id="friction-6" />
+                <label for="friction-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Circular Motion</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="circular-motion-1" />
+                <label for="circular-motion-1">R-Th</label>
+                <input type="checkbox" id="circular-motion-2" />
+                <label for="circular-motion-2">R-1</label>
+                <input type="checkbox" id="circular-motion-3" />
+                <label for="circular-motion-3">R-2</label>
+                <input type="checkbox" id="circular-motion-4" />
+                <label for="circular-motion-4">R-3</label>
+                <input type="checkbox" id="circular-motion-5" />
+                <label for="circular-motion-5">jM(5)</label>
+                <input type="checkbox" id="circular-motion-6" />
+                <label for="circular-motion-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Work Energy and Power</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="work-energy-power-1" />
+                <label for="work-energy-power-1">R-Th</label>
+                <input type="checkbox" id="work-energy-power-2" />
+                <label for="work-energy-power-2">R-1</label>
+                <input type="checkbox" id="work-energy-power-3" />
+                <label for="work-energy-power-3">R-2</label>
+                <input type="checkbox" id="work-energy-power-4" />
+                <label for="work-energy-power-4">R-3</label>
+                <input type="checkbox" id="work-energy-power-5" />
+                <label for="work-energy-power-5">jM(5)</label>
+                <input type="checkbox" id="work-energy-power-6" />
+                <label for="work-energy-power-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>COM</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="com-1" />
+                <label for="com-1">R-Th</label>
+                <input type="checkbox" id="com-2" />
+                <label for="com-2">R-1</label>
+                <input type="checkbox" id="com-3" />
+                <label for="com-3">R-2</label>
+                <input type="checkbox" id="com-4" />
+                <label for="com-4">R-3</label>
+                <input type="checkbox" id="com-5" />
+                <label for="com-5">jM(5)</label>
+                <input type="checkbox" id="com-6" />
+                <label for="com-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Rigid Body Dynamics</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="rigid-body-dynamics-1" />
+                <label for="rigid-body-dynamics-1">R-Th</label>
+                <input type="checkbox" id="rigid-body-dynamics-2" />
+                <label for="rigid-body-dynamics-2">R-1</label>
+                <input type="checkbox" id="rigid-body-dynamics-3" />
+                <label for="rigid-body-dynamics-3">R-2</label>
+                <input type="checkbox" id="rigid-body-dynamics-4" />
+                <label for="rigid-body-dynamics-4">R-3</label>
+                <input type="checkbox" id="rigid-body-dynamics-5" />
+                <label for="rigid-body-dynamics-5">jM(5)</label>
+                <input type="checkbox" id="rigid-body-dynamics-6" />
+                <label for="rigid-body-dynamics-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Gravitation</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="gravitation-1" />
+                <label for="gravitation-1">R-Th</label>
+                <input type="checkbox" id="gravitation-2" />
+                <label for="gravitation-2">R-1</label>
+                <input type="checkbox" id="gravitation-3" />
+                <label for="gravitation-3">R-2</label>
+                <input type="checkbox" id="gravitation-4" />
+                <label for="gravitation-4">R-3</label>
+                <input type="checkbox" id="gravitation-5" />
+                <label for="gravitation-5">jM(5)</label>
+                <input type="checkbox" id="gravitation-6" />
+                <label for="gravitation-6">jA(all)</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Properties of Solids</h3>
+              <div class="checkboxes" style="float: right">
+                <input type="checkbox" id="properties-of-solids-1" />
+                <label for="properties-of-solids-1">R-Th</label>
+                <input type="checkbox" id="properties-of-solids-2" />
+                <label for="properties-of-solids-2">R-1</label>
+                <input type="checkbox" id="properties-of-solids-3" />
+                <label for="properties-of-solids-3">R-2</label>
+                <input type="checkbox" id="properties-of-solids-4" />
+                <label for="properties-of-solids-4">R-3</label>
+                <input type="checkbox" id="properties-of-solids-5" />
+                <label for="properties-of-solids-5">jM(5)</label>
+                <input type="checkbox" id="properties-of-solids-6" />
+                <label for="properties-of-solids-6">jA(all)</label>
+              </div>
+            </div>
+          </div>
+          <div id="dynamics-content" style="display: none">
+            <div class="cards-container">
+              <div class="card">
+                <h3>Thermal Properties of Solids</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="thermal-properties-of-solids-1" />
+                  <label for="thermal-properties-of-solids-1">R-Th</label>
+                  <input type="checkbox" id="thermal-properties-of-solids-2" />
+                  <label for="thermal-properties-of-solids-2">R-1</label>
+                  <input type="checkbox" id="thermal-properties-of-solids-3" />
+                  <label for="thermal-properties-of-solids-3">R-2</label>
+                  <input type="checkbox" id="thermal-properties-of-solids-4" />
+                  <label for="thermal-properties-of-solids-4">R-3</label>
+                  <input type="checkbox" id="thermal-properties-of-solids-5" />
+                  <label for="thermal-properties-of-solids-5">jM(5)</label>
+                  <input type="checkbox" id="thermal-properties-of-solids-6" />
+                  <label for="thermal-properties-of-solids-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Heat Transfer</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="heat-transfer-1" />
+                  <label for="heat-transfer-1">R-Th</label>
+                  <input type="checkbox" id="heat-transfer-2" />
+                  <label for="heat-transfer-2">R-1</label>
+                  <input type="checkbox" id="heat-transfer-3" />
+                  <label for="heat-transfer-3">R-2</label>
+                  <input type="checkbox" id="heat-transfer-4" />
+                  <label for="heat-transfer-4">R-3</label>
+                  <input type="checkbox" id="heat-transfer-5" />
+                  <label for="heat-transfer-5">jM(5)</label>
+                  <input type="checkbox" id="heat-transfer-6" />
+                  <label for="heat-transfer-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>KTG and Thermodynamics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="ktg-and-thermodynamics-1" />
+                  <label for="ktg-and-thermodynamics-1">R-Th</label>
+                  <input type="checkbox" id="ktg-and-thermodynamics-2" />
+                  <label for="ktg-and-thermodynamics-2">R-1</label>
+                  <input type="checkbox" id="ktg-and-thermodynamics-3" />
+                  <label for="ktg-and-thermodynamics-3">R-2</label>
+                  <input type="checkbox" id="ktg-and-thermodynamics-4" />
+                  <label for="ktg-and-thermodynamics-4">R-3</label>
+                  <input type="checkbox" id="ktg-and-thermodynamics-5" />
+                  <label for="ktg-and-thermodynamics-5">jM(5)</label>
+                  <input type="checkbox" id="ktg-and-thermodynamics-6" />
+                  <label for="ktg-and-thermodynamics-6">jA(all)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="energy-content" style="display: none">
+            <div class="cards-container">
+              <div class="card">
+                <h3>Electrostatics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="electrostatics-1" />
+                  <label for="electrostatics-1">R-Th</label>
+                  <input type="checkbox" id="electrostatics-2" />
+                  <label for="electrostatics-2">R-1</label>
+                  <input type="checkbox" id="electrostatics-3" />
+                  <label for="electrostatics-3">R-2</label>
+                  <input type="checkbox" id="electrostatics-4" />
+                  <label for="electrostatics-4">R-3</label>
+                  <input type="checkbox" id="electrostatics-5" />
+                  <label for="electrostatics-5">jM(5)</label>
+                  <input type="checkbox" id="electrostatics-6" />
+                  <label for="electrostatics-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Capacitors</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="capacitors-1" />
+                  <label for="capacitors-1">R-Th</label>
+                  <input type="checkbox" id="capacitors-2" />
+                  <label for="capacitors-2">R-1</label>
+                  <input type="checkbox" id="capacitors-3" />
+                  <label for="capacitors-3">R-2</label>
+                  <input type="checkbox" id="capacitors-4" />
+                  <label for="capacitors-4">R-3</label>
+                  <input type="checkbox" id="capacitors-5" />
+                  <label for="capacitors-5">jM(5)</label>
+                  <input type="checkbox" id="capacitors-6" />
+                  <label for="capacitors-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Current Electricity</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="current-electricity-1" />
+                  <label for="current-electricity-1">R-Th</label>
+                  <input type="checkbox" id="current-electricity-2" />
+                  <label for="current-electricity-2">R-1</label>
+                  <input type="checkbox" id="current-electricity-3" />
+                  <label for="current-electricity-3">R-2</label>
+                  <input type="checkbox" id="current-electricity-4" />
+                  <label for="current-electricity-4">R-3</label>
+                  <input type="checkbox" id="current-electricity-5" />
+                  <label for="current-electricity-5">jM(5)</label>
+                  <input type="checkbox" id="current-electricity-6" />
+                  <label for="current-electricity-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Magnetism</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="magnetism-1" />
+                  <label for="magnetism-1">R-Th</label>
+                  <input type="checkbox" id="magnetism-2" />
+                  <label for="magnetism-2">R-1</label>
+                  <input type="checkbox" id="magnetism-3" />
+                  <label for="magnetism-3">R-2</label>
+                  <input type="checkbox" id="magnetism-4" />
+                  <label for="magnetism-4">R-3</label>
+                  <input type="checkbox" id="magnetism-5" />
+                  <label for="magnetism-5">jM(5)</label>
+                  <input type="checkbox" id="magnetism-6" />
+                  <label for="magnetism-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>EMI</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="emi-1" />
+                  <label for="emi-1">R-Th</label>
+                  <input type="checkbox" id="emi-2" />
+                  <label for="emi-2">R-1</label>
+                  <input type="checkbox" id="emi-3" />
+                  <label for="emi-3">R-2</label>
+                  <input type="checkbox" id="emi-4" />
+                  <label for="emi-4">R-3</label>
+                  <input type="checkbox" id="emi-5" />
+                  <label for="emi-5">jM(5)</label>
+                  <input type="checkbox" id="emi-6" />
+                  <label for="emi-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>AC</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="ac-1" />
+                  <label for="ac-1">R-Th</label>
+                  <input type="checkbox" id="ac-2" />
+                  <label for="ac-2">R-1</label>
+                  <input type="checkbox" id="ac-3" />
+                  <label for="ac-3">R-2</label>
+                  <input type="checkbox" id="ac-4" />
+                  <label for="ac-4">R-3</label>
+                  <input type="checkbox" id="ac-5" />
+                  <label for="ac-5">jM(5)</label>
+                  <input type="checkbox" id="ac-6" />
+                  <label for="ac-6">jA(all)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="rotational-content" style="display: none">
+            <div class="cards-container">
+              <div class="card">
+                <h3>EM Waves</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="em-waves-1" />
+                  <label for="em-waves-1">R-Th</label>
+                  <input type="checkbox" id="em-waves-2" />
+                  <label for="em-waves-2">R-1</label>
+                  <input type="checkbox" id="em-waves-3" />
+                  <label for="em-waves-3">R-2</label>
+                  <input type="checkbox" id="em-waves-4" />
+                  <label for="em-waves-4">R-3</label>
+                  <input type="checkbox" id="em-waves-5" />
+                  <label for="em-waves-5">jM(5)</label>
+                  <input type="checkbox" id="em-waves-6" />
+                  <label for="em-waves-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Dual Nature</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="dual-nature-1" />
+                  <label for="dual-nature-1">R-Th</label>
+                  <input type="checkbox" id="dual-nature-2" />
+                  <label for="dual-nature-2">R-1</label>
+                  <input type="checkbox" id="dual-nature-3" />
+                  <label for="dual-nature-3">R-2</label>
+                  <input type="checkbox" id="dual-nature-4" />
+                  <label for="dual-nature-4">R-3</label>
+                  <input type="checkbox" id="dual-nature-5" />
+                  <label for="dual-nature-5">jM(5)</label>
+                  <input type="checkbox" id="dual-nature-6" />
+                  <label for="dual-nature-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Atomic Physics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="atomic-physics-1" />
+                  <label for="atomic-physics-1">R-Th</label>
+                  <input type="checkbox" id="atomic-physics-2" />
+                  <label for="atomic-physics-2">R-1</label>
+                  <input type="checkbox" id="atomic-physics-3" />
+                  <label for="atomic-physics-3">R-2</label>
+                  <input type="checkbox" id="atomic-physics-4" />
+                  <label for="atomic-physics-4">R-3</label>
+                  <input type="checkbox" id="atomic-physics-5" />
+                  <label for="atomic-physics-5">jM(5)</label>
+                  <input type="checkbox" id="atomic-physics-6" />
+                  <label for="atomic-physics-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Nuclear Physics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="nuclear-physics-1" />
+                  <label for="nuclear-physics-1">R-Th</label>
+                  <input type="checkbox" id="nuclear-physics-2" />
+                  <label for="nuclear-physics-2">R-1</label>
+                  <input type="checkbox" id="nuclear-physics-3" />
+                  <label for="nuclear-physics-3">R-2</label>
+                  <input type="checkbox" id="nuclear-physics-4" />
+                  <label for="nuclear-physics-4">R-3</label>
+                  <input type="checkbox" id="nuclear-physics-5" />
+                  <label for="nuclear-physics-5">jM(5)</label>
+                  <input type="checkbox" id="nuclear-physics-6" />
+                  <label for="nuclear-physics-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>SemiConductors</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="semiconductors-1" />
+                  <label for="semiconductors-1">R-Th</label>
+                  <input type="checkbox" id="semiconductors-2" />
+                  <label for="semiconductors-2">R-1</label>
+                  <input type="checkbox" id="semiconductors-3" />
+                  <label for="semiconductors-3">R-2</label>
+                  <input type="checkbox" id="semiconductors-4" />
+                  <label for="semiconductors-4">R-3</label>
+                  <input type="checkbox" id="semiconductors-5" />
+                  <label for="semiconductors-5">jM(5)</label>
+                  <input type="checkbox" id="semiconductors-6" />
+                  <label for="semiconductors-6">jA(all)</label>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3>Communication Systems</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="communication-systems-1" />
+                  <label for="communication-systems-1">R-Th</label>
+                  <input type="checkbox" id="communication-systems-2" />
+                  <label for="communication-systems-2">R-1</label>
+                  <input type="checkbox" id="communication-systems-3" />
+                  <label for="communication-systems-3">R-2</label>
+                  <input type="checkbox" id="communication-systems-4" />
+                  <label for="communication-systems-4">R-3</label>
+                  <input type="checkbox" id="communication-systems-5" />
+                  <label for="communication-systems-5">jM(5)</label>
+                  <input type="checkbox" id="communication-systems-6" />
+                  <label for="communication-systems-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Experimental Physics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="experimental-physics-1" />
+                  <label for="experimental-physics-1">R-Th</label>
+                  <input type="checkbox" id="experimental-physics-2" />
+                  <label for="experimental-physics-2">R-1</label>
+                  <input type="checkbox" id="experimental-physics-3" />
+                  <label for="experimental-physics-3">R-2</label>
+                  <input type="checkbox" id="experimental-physics-4" />
+                  <label for="experimental-physics-4">R-3</label>
+                  <input type="checkbox" id="experimental-physics-5" />
+                  <label for="experimental-physics-5">jM(5)</label>
+                  <input type="checkbox" id="experimental-physics-6" />
+                  <label for="experimental-physics-6">jA(all)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="gravitation-content" style="display: none">
+            <div class="cards-container">
+              <div class="card">
+                <h3>Ray Optics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="ray-optics-1" />
+                  <label for="ray-optics-1">R-Th</label>
+                  <input type="checkbox" id="ray-optics-2" />
+                  <label for="ray-optics-2">R-1</label>
+                  <input type="checkbox" id="ray-optics-3" />
+                  <label for="ray-optics-3">R-2</label>
+                  <input type="checkbox" id="ray-optics-4" />
+                  <label for="ray-optics-4">R-3</label>
+                  <input type="checkbox" id="ray-optics-5" />
+                  <label for="ray-optics-5">jM(5)</label>
+                  <input type="checkbox" id="ray-optics-6" />
+                  <label for="ray-optics-6">jA(all)</label>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Wave Optics</h3>
+                <div class="checkboxes" style="float: right">
+                  <input type="checkbox" id="wave-optics-1" />
+                  <label for="wave-optics-1">R-Th</label>
+                  <input type="checkbox" id="wave-optics-2" />
+                  <label for="wave-optics-2">R-1</label>
+                  <input type="checkbox" id="wave-optics-3" />
+                  <label for="wave-optics-3">R-2</label>
+                  <input type="checkbox" id="wave-optics-4" />
+                  <label for="wave-optics-4">R-3</label>
+                  <input type="checkbox" id="wave-optics-5" />
+                  <label for="wave-optics-5">jM(5)</label>
+                  <input type="checkbox" id="wave-optics-6" />
+                  <label for="wave-optics-6">jA(all)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            document
+              .getElementById("kinematics")
+              .addEventListener("click", () => {
+                toggleDiv("kinematics-content");
+              });
+            document
+              .getElementById("dynamics")
+              .addEventListener("click", () => {
+                toggleDiv("dynamics-content");
+              });
+            document.getElementById("energy").addEventListener("click", () => {
+              toggleDiv("energy-content");
+            });
+            document
+              .getElementById("rotational")
+              .addEventListener("click", () => {
+                toggleDiv("rotational-content");
+              });
+            document
+              .getElementById("gravitation")
+              .addEventListener("click", () => {
+                toggleDiv("gravitation-content");
+              });
+
+            function toggleDiv(divId) {
+              if (divId !== "Physics") {
+                if (document.getElementById(divId).style.display === "none") {
+                  var activeDiv = document.querySelector(".actived");
+                  if (activeDiv) {
+                    activeDiv.classList.remove("actived");
+                    activeDiv.style.display = "none";
+                  }
+                  document.getElementById(divId).classList.add("actived");
+                  document.getElementById(divId).style.display = "grid";
+                } else {
+                  document.getElementById(divId).style.display = "none";
+                }
+              }
+            }
+          </script>
+        </div>
+      </div>
+
+      <div id="Chem" class="tabcontent">
+        <h3>Chem</h3>
+        <p>
+          Chemistry is the scientific study of the composition, properties, and
+          reactions of matter. It is a physical science that studies the
+          composition, properties, and reactions of matter.
+        </p>
+      </div>
+
+      <div id="Math" class="tabcontent">
+        <h3>Math</h3>
+        <p>
+          Mathematics is the scientific study of numbers, quantities, and
+          shapes. It is a language with its own notations, vocabulary, and
+          grammar, and is used to describe and analyze the world around us.
+        </p>
+      </div>
+
+      <script>
+        function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+              " active",
+              ""
+            );
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+      </script>
+    </div>
+  </body>
+</html>
