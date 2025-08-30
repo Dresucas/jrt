@@ -6,6 +6,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #00000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a;
+    border-radius: 10px;
+  }
   background-attachment: fixed;
   margin: 0;
   padding: 0;
@@ -41,11 +50,11 @@ body {
 }
 
 .tabsContainer {
-  width: 70vw;
+  width: 60vw;
   min-height: 70vh;
   height: fit-content;
-  backdrop-filter: blur(5px);
-  background-color: rgba(62, 62, 62, 0.27);
+  backdrop-filter: blur(10px);
+  background-color: rgba(40, 40, 40, 0.301);
   padding: 20px;
   position: absolute;
   top: 55%;
@@ -144,4 +153,31 @@ label {
   position: fixed;
   margin-left: -65px;
   margin-top: 30px;
+}
+#load {
+  margin-top: 100px;
+}
+#save,
+#load {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#save:hover,
+#load:hover {
+  background-color: rgba(102, 102, 102, 0.622);
 }
